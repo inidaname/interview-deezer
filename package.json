@@ -1,0 +1,24 @@
+{
+  "name": "api-gate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "esbuild ./src/* --bundle --minify --sourcemap --platform=node --target=es2020 --outdir=dist/",
+    "postbuild": "cd dist && zip -r ./index.zip ./*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.119",
+    "@types/node": "^20.5.9",
+    "esbuild": "^0.19.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "node-fetch": "^3.3.2"
+  }
+}
