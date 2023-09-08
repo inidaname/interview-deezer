@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "prebuild": "rm -rf dist",
-    "build": "esbuild ./src/* --bundle --minify --sourcemap --platform=node --target=es2020 --outdir=dist/",
-    "postbuild": "cd dist && zip -r ./index.zip ./*"
+    "build": "esbuild ./src/**/* --bundle --minify --sourcemap --platform=node --target=es2020 --outdir=dist/",
+    "postbuild": "cd dist/searchFunc && zip -r ./index.zip ./index.js* && cd ../getByIdfunc && zip -r ./index.zip ./index.js*  && cd ../getTopTracks && zip -r ./index.zip ./index.js*"
   },
   "keywords": [],
   "author": "",
